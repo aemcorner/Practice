@@ -1,0 +1,13 @@
+Hello
+
+<div data-sly-use.myobj="com.vdhiman.aem.core.components.PracticeImpl">
+   <table border="1">
+    <div data-sly-list.child="${myobj.pageNames}">
+       <tr>
+          <td>
+           ${child}
+         </td>
+      </tr>
+    </div>
+   </table>
+</div>

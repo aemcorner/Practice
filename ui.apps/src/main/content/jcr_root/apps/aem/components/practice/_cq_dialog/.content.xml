@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Banner"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <text
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Text"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldDescription="Heading for the banner, this field is mandatory"
+                                fieldLabel="Page Path"
+                                name="./pagepath"
+                                required="true"/>
+                            <subheading
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Subheading for the banner"
+                                fieldLabel="Sub Heading"
+                                name="./subheading"/>
+                        </items>
+                    </column>
+                </items>
+            </text>
+            <general
+                jcr:primaryType="nt:unstructured"
+                jcr:title="General"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <slideUnder
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                fieldDescription="Select option 'Yes' for the banner to slide under the generic header"
+                                fieldLabel="Slide Under"
+                                name="./slideUnder">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <yes
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Yes"
+                                        value="true"/>
+                                    <button
+                                        jcr:primaryType="nt:unstructured"
+                                        text="No"
+                                        value="false"/>
+                                </items>
+                            </slideUnder>
+                        </items>
+                    </column>
+                </items>
+            </general>
+            <backgroundimage
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Background Image"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <backgroundimage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                                autoStart="{Boolean}false"
+                                class="cq-droptarget"
+                                disabled="{Boolean}true"
+                                fieldDescription="Please drag and drop image from asset library"
+                                fieldLabel="Background Image"
+                                fileNameParameter="./backgroundimage/fileName"
+                                mimeTypes="[image]"
+                                multiple="{Boolean}false"
+                                name="./backgroundimage/file"
+                                title="Drag and drop image here"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <alt
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Alternative text for an Image"
+                                fieldLabel="Alt Text"
+                                name="./altText"/>
+                            <imgTitle
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Title of an Image"
+                                fieldLabel="Image Title"
+                                name="./imageTitle"/>
+                            <linkTo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                delay="{Long}3000000"
+                                fieldDescription="Select path from AEM or enter URL"
+                                fieldLabel="Link To"
+                                name="./linkTo"
+                                rootPath="/content"/>
+                            <newTab
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Open Image hyperlink in new tab/window."
+                                name="./newTab"
+                                text="Open in new Tab ?"
+                                value="true"/>
+                        </items>
+                    </column>
+                </items>
+            </backgroundimage>
+            <backgroundcolor
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Background Color"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="{Boolean}false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <backgroundcolorclass
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                defaultValue="blank"
+                                fieldDescription="Select a background colour class from the list"
+                                fieldLabel="Background Color Class"
+                                name="./backgroundcolorclass">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <button
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Blank"
+                                        value="blank"/>
+                                    <theme-1
+                                        jcr:primaryType="nt:unstructured"
+                                        text="theme-teal"
+                                        value="theme-1"/>
+                                    <theme-2
+                                        jcr:primaryType="nt:unstructured"
+                                        text="theme-yellow"
+                                        value="theme-2"/>
+                                    <theme-3
+                                        jcr:primaryType="nt:unstructured"
+                                        text="theme-pink"
+                                        value="theme-3"/>
+                                    <theme-4
+                                        jcr:primaryType="nt:unstructured"
+                                        text="theme-berry"
+                                        value="theme-4"/>
+                                    <theme-5
+                                        jcr:primaryType="nt:unstructured"
+                                        text="theme-purple"
+                                        value="theme-5"/>
+                                    <theme-6
+                                        jcr:primaryType="nt:unstructured"
+                                        text="theme-white"
+                                        value="theme-6"/>
+                                    <theme-7
+                                        jcr:primaryType="nt:unstructured"
+                                        text="theme-navy"
+                                        value="theme-7"/>
+                                    <theme-8
+                                        jcr:primaryType="nt:unstructured"
+                                        text="theme-blue"
+                                        value="theme-8"/>
+                                </items>
+                            </backgroundcolorclass>
+                            <backgroundcolor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="springd/components/global/form/colorpicker"
+                                fieldDescription="Click the field to select colour from the palette or enter hex values in the box"
+                                fieldLabel="Background Color"
+                                name="./backgroundcolor"/>
+                            <foregroundcolor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="springd/components/global/form/colorpicker"
+                                fieldDescription="Click the field to select colour from the palette or enter hex values in the box"
+                                fieldLabel="Foreground Color"
+                                name="./foregroundcolor"/>
+                        </items>
+                    </column>
+                </items>
+            </backgroundcolor>
+            <links
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Button / Link"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    margin="false"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <column
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <previouslink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./previouslink"
+                                text="Hide Breadcrumb"
+                                value="true"/>
+                            <linkorbutton
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                defaultValue="none"
+                                fieldLabel="Select Button or Link"
+                                name="./linkorbutton">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <none
+                                        jcr:primaryType="nt:unstructured"
+                                        text="None"
+                                        value="none"/>
+                                    <button
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Button"
+                                        value="button"/>
+                                    <link
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Link"
+                                        value="link"/>
+                                </items>
+                            </linkorbutton>
+                            <new_window
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./newwindow"
+                                text="Open in new tab"
+                                value="true"/>
+                            <belowlinktext
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                fieldDescription="Text for Button/Link text"
+                                fieldLabel="Button/Link text"
+                                name="./belowtext"/>
+                            <belowlink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                delay="{Long}3000000"
+                                fieldDescription="Select path from AEM or enter the URL"
+                                fieldLabel="Destination URL"
+                                name="./belowlink"
+                                rootPath="/content"/>
+                            <buttoncolor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/select"
+                                defaultValue="primary"
+                                fieldDescription="Configure only if button is selected"
+                                fieldLabel="Select Button Color"
+                                name="./buttoncolor">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <tertiary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Tertiary"
+                                        value="tertiary"/>
+                                    <primary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Primary"
+                                        value="primary"/>
+                                    <secondary
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Secondary"
+                                        value="secondary"/>
+                                    <inverse
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Inverse"
+                                        value="tertiary inverse"/>
+                                </items>
+                            </buttoncolor>
+                        </items>
+                    </column>
+                </items>
+            </links>
+            <padding
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/include"
+                path="springd/components/global/optus/sd-component-padding-optus/cq:dialog/content/items/paddingBottomOnly"/>
+        </items>
+    </content>
+</jcr:root>

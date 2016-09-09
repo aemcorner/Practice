@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="400"
+    title="Banner Component"
+    width="600"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <text
+                jcr:primaryType="cq:Panel"
+                title="Text">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <heading
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="false"
+                        fieldDescription="Heading for the banner, this field is mandatory"
+                        fieldLabel="Heading"
+                        name="./heading"
+                        xtype="textfield"/>
+                    <subheading
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Subheading for the banner"
+                        fieldLabel="Sub Heading"
+                        name="./subheading"
+                        xtype="textfield"/>
+                    <description
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Description for the banner"
+                        fieldLabel="Description"
+                        name="./text"
+                        xtype="richtext">
+                        <rtePlugins
+                            jcr:primaryType="nt:unstructured"
+                            path="/apps/springd/components/global/rteConfig/config/rtePlugins.infinity.json"
+                            xtype="cqinclude"/>
+                    </description>
+                </items>
+            </text>
+            <backgroundimage
+                jcr:primaryType="cq:Widget"
+                cropParameter="./backgroundimage/imageCrop"
+                ddGroups="[media]"
+                fileNameParameter="./backgroundimage/fileName"
+                fileReferenceParameter="./backgroundimage/fileReference"
+                mapParameter="./backgroundimage/imageMap"
+                name="./backgroundimage/file"
+                rotateParameter="./backgroundimage/imageRotate"
+                title="Background Image"
+                xtype="html5smartimage"/>
+            <backgroundcolor
+                jcr:primaryType="cq:Panel"
+                title="Background Color">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <backgroundcolorclass
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="blank"
+                        fieldDescription="Select a background color class from the list"
+                        fieldLabel="Background Color Class"
+                        name="./backgroundcolorclass"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <blank
+                                jcr:primaryType="nt:unstructured"
+                                text="Blank"
+                                value="blank"/>
+                            <theme-1
+                                jcr:primaryType="nt:unstructured"
+                                text="theme-teal"
+                                value="theme-1"/>
+                            <theme-2
+                                jcr:primaryType="nt:unstructured"
+                                text="theme-yellow"
+                                value="theme-2"/>
+                            <theme-3
+                                jcr:primaryType="nt:unstructured"
+                                text="theme-pink"
+                                value="theme-3"/>
+                            <theme-4
+                                jcr:primaryType="nt:unstructured"
+                                text="theme-berry"
+                                value="theme-4"/>
+                            <theme-5
+                                jcr:primaryType="nt:unstructured"
+                                text="theme-purple"
+                                value="theme-5"/>
+                            <theme-6
+                                jcr:primaryType="nt:unstructured"
+                                text="theme-white"
+                                value="theme-1"/>
+                            <theme-7
+                                jcr:primaryType="nt:unstructured"
+                                text="theme-navy"
+                                value="theme-1"/>
+                            <theme-8
+                                jcr:primaryType="nt:unstructured"
+                                text="theme-blue"
+                                value="theme-1"/>
+                        </options>
+                    </backgroundcolorclass>
+                    <backgroundcolor
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Select color from the palette"
+                        fieldLabel="Background Color"
+                        name="./backgroundcolor"
+                        xtype="colorfield"/>
+                    <foregroundcolor
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Select color from the palette"
+                        fieldLabel="Foreground Color"
+                        name="./foregroundcolor"
+                        xtype="colorfield"/>
+                </items>
+            </backgroundcolor>
+            <links
+                jcr:primaryType="cq:Panel"
+                title="Button / Link">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <previouslink
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Hide Breadcrumb"
+                        name="./previouslink"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <linkorbutton
+                        jcr:primaryType="cq:Widget"
+                        defaultValue="button"
+                        fieldLabel="Select Button or Link"
+                        name="./linkorbutton"
+                        type="select"
+                        xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <button
+                                jcr:primaryType="nt:unstructured"
+                                text="Button"
+                                value="button"/>
+                            <link
+                                jcr:primaryType="nt:unstructured"
+                                text="Link"
+                                value="link"/>
+                        </options>
+                    </linkorbutton>
+                    <new_window
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Open in new tab"
+                        name="./newwindow"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <belowlinktext
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Text for Button/Link text"
+                        fieldLabel="Button/Link text"
+                        name="./belowtext"
+                        xtype="textfield"/>
+                    <belowlink
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Select path from AEM or enter the URL"
+                        fieldLabel="Destination URL"
+                        name="./belowlink"
+                        xtype="pathfield"/>
+                    <buttoncolor
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Configure only if button is selected"
+                        fieldLabel="Button Color"
+                        name="./buttoncolor"
+                        xtype="textfield"/>
+                </items>
+            </links>
+        </items>
+    </items>
+</jcr:root>
