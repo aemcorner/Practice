@@ -1,0 +1,16 @@
+Hello
+<div data-sly-use.mycomp="com.vdhiman.aem.core.components.Newsinformation">
+  ##  ${mycomp.pagePath}
+  ${mycomp.lowerCaseTitle}
+  ${mycomp.fileRef.fileReference}
+  <img border="10"src = ${mycomp.fileRef.fileReference} />
+  <div data-sly-list.val="${mycomp.prop}">
+    ${val}
+  </div>
+  ${mycomp.pageName}
+  ${mycomp.currentPage}</br>
+
+  <h3>Created By: ${properties.jcr:createdBy} </br></h3>
+  <h3>Created At: ${properties.jcr:created}</h3>
+
+</div>
