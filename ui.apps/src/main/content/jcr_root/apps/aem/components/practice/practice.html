@@ -1,6 +1,22 @@
 Hello
 
 <div data-sly-use.myobj="com.vdhiman.aem.core.components.PracticeImpl">
-   ## ${myobj.heading}
-      ${myobj.pagePath}
+   <table border="1">
+    <div data-sly-list.child="${myobj.pageNames}">
+       <tr>
+          <td>
+           ${child}
+         </td>
+      </tr>
+    </div>
+   </table>
+   <table border="1">
+      <div data-sly-list.date="${myobj.createdBy}">
+         <tr>
+            <td>
+               ${date}
+            </td>
+         </tr>
+      </div>
+   </table>
 </div>
